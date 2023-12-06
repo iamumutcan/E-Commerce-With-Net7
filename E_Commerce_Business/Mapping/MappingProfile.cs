@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using E_Commerce_DataAccess;
-using E_Commerce_DataAccess.Models;
 using E_Commerce_Models;
 using System;
 using System.Collections.Generic;
