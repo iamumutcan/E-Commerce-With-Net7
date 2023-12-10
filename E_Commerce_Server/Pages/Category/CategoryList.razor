@@ -1,0 +1,71 @@
+﻿@page "/category"
+@inject ICategoryRepository _categoryRepository
+@inject IJSRuntime _jsRuntime
+@inject NavigationManager _navigationManager
+@*@attribute [Authorize]*@
+
+<div class="row mt-4">
+    <div class="col-6">
+        <h4 class="card-title text-info">Category</h4>
+    </div>
+    <div class="col-4 offset-2">
+        <a href="category/create" class="btn btn-primary form-control">
+            Create New Category
+        </a>
+    </div>
+    <div class="col-12 p-3">
+        @if (Categories.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Categories)
+                    {
+                        <tr>
+                            <td>@category.Name</td>
+                            <td>
+                                <NavLink href="@($"category/edit/{category.Id}")" class="btn btn-primary">Edit Category</NavLink>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            if (IsLoading)
+            {
+                <div class="text-center">
+                   <p> Categories Loading</p>
+                </div>
+            }
+            else
+            {
+                <p>No Records For Category</p>
+            }
+        }
+    </div>
+</div>
+
+
+
+
+@code {
+    private IEnumerable<CategoryDTO> Categories { get; set; } = new List<CategoryDTO>();
+    public bool IsLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(2000);
+        Categories = await _categoryRepository.GetAll();
+        IsLoading = false;
+    }
+
+  
+}

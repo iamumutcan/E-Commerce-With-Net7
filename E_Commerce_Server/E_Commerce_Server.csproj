@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\E_Commerce_Business\E_Commerce_Business.csproj" />
     <ProjectReference Include="..\E_Commerce_DataAccess\E_Commerce_DataAccess.csproj" />
+    <ProjectReference Include="..\E_Commerce_Models\E_Commerce_Models.csproj" />
   </ItemGroup>
 
 </Project>
