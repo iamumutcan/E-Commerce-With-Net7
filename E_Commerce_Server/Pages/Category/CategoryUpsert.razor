@@ -48,7 +48,6 @@
     public bool IsLoading { get; set; } = true;
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
         if (Id == 0)
         {
             IsLoading = false;

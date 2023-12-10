@@ -43,6 +43,7 @@
             {
                 <div class="text-center">
                    <p> Categories Loading</p>
+                   <img src="/images/loading.gif">
                 </div>
             }
             else
@@ -62,7 +63,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
+        await Task.Delay(500);
         Categories = await _categoryRepository.GetAll();
         IsLoading = false;
     }
