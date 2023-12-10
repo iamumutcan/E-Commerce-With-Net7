@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_Client", "E_Commerce_Client\E_Commerce_Client.csproj", "{316F38F3-284F-4905-8A11-0D85E3148330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_Client", "E_Commerce_Client\E_Commerce_Client.csproj", "{316F38F3-284F-4905-8A11-0D85E3148330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_Models", "E_Commerce_Models\E_Commerce_Models.csproj", "{C6A6A74C-16EC-4725-AD32-419788692826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_Models", "E_Commerce_Models\E_Commerce_Models.csproj", "{C6A6A74C-16EC-4725-AD32-419788692826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_Business", "E_Commerce_Business\E_Commerce_Business.csproj", "{F8D78691-1FFA-468A-9313-123776DA0696}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_Business", "E_Commerce_Business\E_Commerce_Business.csproj", "{F8D78691-1FFA-468A-9313-123776DA0696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_Common", "E_Commerce_Common\E_Commerce_Common.csproj", "{75C6A3A6-C4B8-4906-ABFE-FD43C19A3A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_Common", "E_Commerce_Common\E_Commerce_Common.csproj", "{75C6A3A6-C4B8-4906-ABFE-FD43C19A3A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_DataAccess", "E_Commerce_DataAccess\E_Commerce_DataAccess.csproj", "{E6B22D11-680E-476B-A354-C4562FC8CBEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_DataAccess", "E_Commerce_DataAccess\E_Commerce_DataAccess.csproj", "{E6B22D11-680E-476B-A354-C4562FC8CBEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_API", "E_Commerce_API\E_Commerce_API.csproj", "{F87FDB39-46E0-4692-95AB-2F962FC604FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_API", "E_Commerce_API\E_Commerce_API.csproj", "{F87FDB39-46E0-4692-95AB-2F962FC604FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Commerce_Server", "E_Commerce_Server\E_Commerce_Server.csproj", "{2E44EC0E-B9A4-4089-9572-472834303B1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Commerce_Server", "E_Commerce_Server\E_Commerce_Server.csproj", "{2E44EC0E-B9A4-4089-9572-472834303B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

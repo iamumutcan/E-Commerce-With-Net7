@@ -4,6 +4,8 @@
 @inject NavigationManager _navigationManager
 @*@attribute [Authorize]*@
 
+<_DeleteConfirmation ConfirmationChanged="ConfirmDelete_Click"></_DeleteConfirmation>
+
 <div class="row mt-4">
     <div class="col-6">
         <h4 class="card-title text-info">Category</h4>
@@ -30,6 +32,7 @@
                             <td>@category.Name</td>
                             <td>
                                 <NavLink href="@($"category/edit/{category.Id}")" class="btn btn-primary">Edit Category</NavLink>
+                                <button class="btn btn-danger" @onclick="(()=>HandleDelete(category.Id))">Delete Category</button>
                             </td>
                         </tr>
                     }
@@ -60,12 +63,27 @@
 @code {
     private IEnumerable<CategoryDTO> Categories { get; set; } = new List<CategoryDTO>();
     public bool IsLoading { get; set; } = true;
+    public int DeleteCategoryId { get; set; } = 0;
 
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(500);
         Categories = await _categoryRepository.GetAll();
         IsLoading = false;
+    }
+    private void HandleDelete(int id)
+    {
+        DeleteCategoryId = id;
+        _jsRuntime.InvokeVoidAsync("ShowDeleteConfirmationModal");
+    }
+    public async Task ConfirmDelete_Click(bool IsConfirmed)
+    {
+        if (IsConfirmed && DeleteCategoryId != 0)
+        {
+            await _categoryRepository.Delete(DeleteCategoryId);
+            Categories = await _categoryRepository.GetAll();
+            await _jsRuntime.InvokeVoidAsync("HideDeleteConfirmationModal");
+        }
     }
 
   
