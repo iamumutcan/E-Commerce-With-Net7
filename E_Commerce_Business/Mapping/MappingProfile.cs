@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using E_Commerce_DataAccess;
 using E_Commerce_Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Commerce_Business.Mapping
 {
@@ -15,7 +10,7 @@ namespace E_Commerce_Business.Mapping
         {
             CreateMap<Category, CategoryDTO>().ReverseMap();
             CreateMap<Product, ProductDTO>().ReverseMap();
-          
+
 
         }
     }

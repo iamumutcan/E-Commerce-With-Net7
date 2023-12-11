@@ -4,11 +4,6 @@ using E_Commerce_DataAccess;
 using E_Commerce_DataAccess.Data;
 using E_Commerce_Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Commerce_Business.Repository
 {
@@ -16,7 +11,7 @@ namespace E_Commerce_Business.Repository
     {
         private readonly ApplicationDbContext _db;
         private readonly IMapper _mapper;
-        public CategoryRepository(ApplicationDbContext db,IMapper mapper)
+        public CategoryRepository(ApplicationDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
@@ -26,7 +21,7 @@ namespace E_Commerce_Business.Repository
         {
             var obj = _mapper.Map<CategoryDTO, Category>(objDTO);
             obj.CreatedDate = DateTime.Now;
-            var addedObj =  _db.Categories.Add(obj);
+            var addedObj = _db.Categories.Add(obj);
             await _db.SaveChangesAsync();
             return _mapper.Map<Category, CategoryDTO>(addedObj.Entity);
         }
@@ -60,7 +55,7 @@ namespace E_Commerce_Business.Repository
         public async Task<CategoryDTO> Update(CategoryDTO objDTO)
         {
             var objFromDb = await _db.Categories.FirstOrDefaultAsync(x => x.Id == objDTO.Id);
-            if (objFromDb!=null)
+            if (objFromDb != null)
             {
                 objFromDb.Name = objDTO.Name;
                 _db.Categories.Update(objFromDb);

@@ -2,8 +2,6 @@ using E_Commerce_Business.Repository;
 using E_Commerce_Business.Repository.IRepository;
 using E_Commerce_DataAccess.Data;
 using E_Commerce_Server.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

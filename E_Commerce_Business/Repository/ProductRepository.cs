@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using E_Commerce_Business.Repository.IRepository;
-using E_Commerce_DataAccess.Data;
 using E_Commerce_DataAccess;
+using E_Commerce_DataAccess.Data;
 using E_Commerce_Models;
 using Microsoft.EntityFrameworkCore;
 
