@@ -2,6 +2,8 @@ using E_Commerce_Business.Repository;
 using E_Commerce_Business.Repository.IRepository;
 using E_Commerce_DataAccess.Data;
 using E_Commerce_Server.Data;
+using E_Commerce_Server.Service.IService;
+using E_Commerce_Server.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));//Path
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IFileUpload, FileUpload>();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddRazorPages();
