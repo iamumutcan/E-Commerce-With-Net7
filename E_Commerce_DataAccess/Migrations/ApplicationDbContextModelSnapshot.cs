@@ -85,6 +85,31 @@ namespace E_Commerce_DataAccess.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("E_Commerce_DataAccess.ProductPrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Publisher")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductPrices");
+                });
+
             modelBuilder.Entity("E_Commerce_DataAccess.Product", b =>
                 {
                     b.HasOne("E_Commerce_DataAccess.Category", "Category")
@@ -94,6 +119,22 @@ namespace E_Commerce_DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("E_Commerce_DataAccess.ProductPrice", b =>
+                {
+                    b.HasOne("E_Commerce_DataAccess.Product", "Product")
+                        .WithMany("ProductPrices")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("E_Commerce_DataAccess.Product", b =>
+                {
+                    b.Navigation("ProductPrices");
                 });
 #pragma warning restore 612, 618
         }
