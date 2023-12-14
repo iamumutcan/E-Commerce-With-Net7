@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /E_Commerce_Server/secrets.json
+
+# Prevent files in images folder from being uploaded
+E_Commerce_Server/wwwroot/images/*
