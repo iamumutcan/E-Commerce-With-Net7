@@ -1,5 +1,6 @@
 ﻿@page "/product/{Id:int}"
 @inject IProductService _productService
+@inject ICartService _cartService
 @inject NavigationManager _navigationManager
 @inject IJSRuntime _jsRuntime
 <head>
@@ -9,7 +10,7 @@
 @if (IsProcessing)
 {
     <div style="position:fixed;top:50%;left:50%;margin-top:-50px;margin-left:-100px">
-        <img src="images/book.gif" />
+        <img src="images/loading.gif" />
 
     </div>
 }
@@ -93,7 +94,14 @@ else
 
     private async Task AddCart()
     {
-       
+        ShoppingCart shopCart = new()
+            {
+                Count = DetailsVM.Count,
+                ProductId = Id,
+                ProductPriceId = DetailsVM.SelectedProductPriceId,
+            };
+        await _cartService.IncrementItem(shopCart);
+        _navigationManager.NavigateTo("/");
 
     }
 
