@@ -5,7 +5,7 @@ using E_Commerce_Common;
 
 namespace E_Commerce_Client.Service
 {
-    public class CartService: ICartService
+    public class CartService : ICartService
     {
         private readonly ILocalStorageService _localStorageService;
         public CartService(ILocalStorageService localStorageService)

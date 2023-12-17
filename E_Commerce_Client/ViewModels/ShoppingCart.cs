@@ -9,5 +9,6 @@ namespace E_Commerce_Client.ViewModels
         public int ProductPriceId { get; set; }
         public ProductPriceDTO ProductPrice { get; set; }
         public int Count { get; set; }
+
     }
 }
