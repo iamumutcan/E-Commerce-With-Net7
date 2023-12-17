@@ -9,6 +9,9 @@ namespace E_Commerce_Common
     public static class Keys
     {
         public const string ShopppingCart = "ForCart";
+        public const string Status_Confirmed = "ForSuccess";
+        public const string Pending = "ForPending";
+        public const string Status_Shipped = "ForShipped";
 
     }
 }
