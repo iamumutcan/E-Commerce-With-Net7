@@ -14,5 +14,6 @@ namespace E_Commerce_DataAccess.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<OrderHeader> OrderHeaders { get; set; }
 
+
     }
 }
